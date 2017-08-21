@@ -1,0 +1,23 @@
+[alias]
+    br = branch
+    ci = commit -v
+    co = checkout
+    dc = diff --cached --word-diff=color
+    di = diff --word-diff=color
+    gl = log --decorate --graph --pretty=oneline
+    glog = log --decorate --graph
+    st = status -bs
+    up = "!git remote update -p; git merge --ff-only @{u}"
+[color]
+    ui = auto
+[core]
+    preloadindex = yes
+[merge]
+    tool = vimdiff
+[pull]
+    rebase = true
+[push]
+    default = matching
+#
+[include]
+    path = ~/.gitconfig.local

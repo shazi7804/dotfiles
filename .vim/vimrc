@@ -1,0 +1,104 @@
+"
+set autoindent
+set backspace=indent,eol,start
+set cursorline
+set encoding=utf8
+set expandtab
+set fileencoding=utf8
+set fileencodings=ucs-bom,utf8,cp950,gbk,latin1
+set guifont=Inconsolata:h12
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set lazyredraw
+set list
+set listchars=tab:▷⋅,trail:·
+set nobomb
+set nocompatible
+set nofoldenable
+set number
+set relativenumber
+set ruler
+set scrolloff=3
+set secure
+set shiftwidth=4
+set showmatch
+set smartcase
+set t_Co=256
+set visualbell
+set wildmenu
+syntax on
+"
+" color schema
+let g:airline_powerline_fonts = 1
+set background=dark
+colo desert256
+highlight Search cterm=none ctermbg=blue
+"
+let g:DisableAutoPHPFolding = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+hi IndentGuidesEven ctermbg=8
+hi IndentGuidesOdd ctermbg=236
+"
+" mapping
+map q: :q
+nmap <Esc>[Z <C-w>W
+nmap <F8> :TagbarToggle<CR>
+nmap <Tab> <C-w>w
+nnoremap <silent> p p`]
+vmap <C-v> <Plug>(expand_region_shrink)
+vmap v <Plug>(expand_region_expand)
+vnoremap <silent> p p`]
+vnoremap <silent> y y`]
+"
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+"
+Bundle "gmarik/vundle"
+"
+Bundle "bling/vim-airline"
+Bundle "bonsaiben/bootstrap-snippets"
+Bundle "ctrlpvim/ctrlp.vim"
+Bundle "derekwyatt/vim-scala"
+Bundle "elzr/vim-json"
+Bundle "evidens/vim-twig"
+Bundle "garbas/vim-snipmate"
+Bundle "godlygeek/csapprox"
+Bundle "gregsexton/gitv"
+Bundle "hashivim/vim-terraform"
+Bundle "honza/vim-snippets"
+Bundle "majutsushi/tagbar"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "motus/pig.vim"
+Bundle "nathanaelkane/vim-indent-guides"
+Bundle "pangloss/vim-javascript"
+Bundle "rodjek/vim-puppet"
+Bundle "rust-lang/rust.vim"
+Bundle "spf13/PIV"
+Bundle "terryma/vim-expand-region"
+Bundle "tomtom/tlib_vim"
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-surround"
+"
+filetype plugin indent on
+let g:ctrlp_use_caching = 0
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:SuperTabDefaultCompletionType = "context"
+let g:vim_json_syntax_conceal = 0
+let mapleader="\<Space>"
+"
+" other
+au BufNewFile,BufRead *.go set filetype=go
+au BufNewFile,BufRead *.sls set filetype=yaml
+au BufNewFile,BufRead *.sls set shiftwidth=2
+au BufNewFile,BufRead *.mk set noexpandtab
+au BufNewFile,BufRead *.psgi setf perl
+au BufNewFile,BufRead *.rb set shiftwidth=2
+au BufNewFile,BufRead *.yaml set shiftwidth=2
+au BufNewFile,BufRead *.yml set shiftwidth=2
+au BufNewFile,BufRead Makefile set noexpandtab
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+autocmd BufEnter * silent! lcd %:p:h
