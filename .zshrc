@@ -24,6 +24,7 @@ alias "psa=ps aux"
 alias "psm=ps -U $USER"
 alias "psr=psu root"
 alias "psu=ps -U"
+alias "repo=cd ~/Development/shazi7804.github"
 alias "s=screen"
 alias "smic=sudo make install clean"
 alias "ssh=ssh -C -e none -v"
@@ -54,9 +55,9 @@ precmd() {
     fi
 
     if [[ -z "$WINDOW" ]]; then
-        PS1=$'%{\e[m\e[G\e[K\e[32m%}%n%{\e[m%}@%{\e[36m%}%m%{\e[m%} [%{\e[32m%}%~%{\e[m%}] [%{\e[36m%}%D{%R}%{\e[m%}] '
+        PS1=$'%{\e[m\e[G\e[K\e[32m%}%n%{\e[m%} %{\e[32m%}%~%{\e[m%} [%{\e[36m%}%D{%R}%{\e[m%}] '
     else
-        PS1=$'%{\e[m\e[G\e[K\e[32m%}%n%{\e[m%}@%{\e[36m%}%m%{\e[m%} [%{\e[32m%}%~%{\e[m%}] [%{\e[36m%}%D{%R}%{\e[m%}/%{\e[36m%}W${WINDOW}%{\e[m%}]%{\e[0m%} '
+        PS1=$'%{\e[m\e[G\e[K\e[32m%}%n%{\e[m%} %{\e[32m%}%~%{\e[m%} [%{\e[36m%}%D{%R}%{\e[m%}/%{\e[36m%}W${WINDOW}%{\e[m%}]%{\e[0m%} '
     fi
 
     vcs_info
@@ -110,12 +111,15 @@ zle -N my-backward-delete-word
 bindkey '^w' my-backward-delete-word
 #
 if [[ "`uname -s`" == "FreeBSD" || "`uname -s`" == "Darwin" ]]; then
-    alias "ls=/bin/ls -aFG"
+    alias "ls=/bin/ls -FG"
+    alias "lsa=/bin/ls -aFG"
     alias "w=/usr/bin/w -i"
 elif [[ "`uname -s`" = "Linux" ]]; then
-    alias "ls=/bin/ls -aF --color=always"
+    alias "ls=/bin/ls -F --color=always"
+    alias "lsa=/bin/ls -aF --color=always"
 else
-    alias "ls=/bin/ls -aF"
+    alias "ls=/bin/ls -F"
+    alias "lsa=/bin/ls -aF"
 fi
 #
 export BLOCKSIZE="k"
