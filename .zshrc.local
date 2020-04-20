@@ -6,12 +6,21 @@ alias "update=(cd ~/git; make all)"
 [[ -s "$HOME/perl5/perlbrew/etc/bashrc" ]] && source "$HOME/perl5/perlbrew/etc/bashrc"
 [[ -s "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
-#
+
+# Python
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"
     eval "$(pyenv init -)"
 fi
+
+[[ -s "$HOME/Library/Python/3.7/bin" ]] && export PATH="Library/Python/3.7/bin:$PATH"
 #
 # Put rvm at last position.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# OpenSSL@1.1 version
+[[ -s "/usr/local/opt/openssl@1.1/bin" ]] && export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+[[ -s "/usr/local/opt/openssl@1.1/lib" ]] && export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+[[ -s "/usr/local/opt/openssl@1.1/include" ]] && export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+
