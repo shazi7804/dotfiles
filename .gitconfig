@@ -9,7 +9,11 @@
     st = status -bs
     up = "!git remote update -p; git merge --ff-only @{u}"
 [color]
-    ui = auto
+	  ui = auto
+	  diff = auto
+	  status = auto
+	  branch = auto
+	  log = auto
 [core]
     preloadindex = yes
 [merge]

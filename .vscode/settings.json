@@ -1,0 +1,35 @@
+{
+  // "editor.fontSize": 10,
+  // "window.zoomLevel": 0,
+  "workbench.iconTheme": "file-icons",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "One Dark Pro",
+  "terminal.integrated.shell.osx": "zsh",
+  "terminal.integrated.fontFamily": "LiterationMonoPowerline",
+  "extensions.ignoreRecommendations": true,
+  "latex-workshop.view.pdf.viewer": "browser",
+  "workbench.colorCustomizations": {
+      "activityBar.background": "#282a36",
+      "badge.background": "#000000",
+      "editor.background": "#000000",
+      "sideBarSectionHeader.background": "#282a36",
+      "tab.activeBackground": "#311b7e",
+      "titleBar.activeBackground": "#282a36",
+  },
+  "go.gopath":"/Users/k2r2bai/Desktop/Dev/go",
+  "go.useLanguageServer": true,
+  "go.inferGopath": true,
+  "go.gotoSymbol.includeImports": true,
+  "go.useCodeSnippetsOnFunctionSuggest": true,
+  "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
+  "go.gocodePackageLookupMode": "go",
+  "go.formatTool": "goimports",
+  "go.docsTool": "gogetdoc",
+  "go.languageServerExperimentalFeatures": {
+      "format": false,
+      "autoComplete": true,
+      "documentLink": false
+  },
+
+  "explorer.confirmDragAndDrop": false,
+}
