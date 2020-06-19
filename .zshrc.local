@@ -14,6 +14,9 @@ if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv init -)"
 fi
 
+alias "python=/usr/local/bin/python3"
+alias "pip=/usr/local/bin/pip3"
+
 [[ -s "$HOME/Library/Python/3.7/bin" ]] && export PATH="Library/Python/3.7/bin:$PATH"
 #
 # Put rvm at last position.
@@ -24,3 +27,5 @@ fi
 [[ -s "/usr/local/opt/openssl@1.1/lib" ]] && export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 [[ -s "/usr/local/opt/openssl@1.1/include" ]] && export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 
+# vscode
+PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin

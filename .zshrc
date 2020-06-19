@@ -56,9 +56,6 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
-# If you come from bash you might have to change your $PATH.
-
-
 # ------------------
 # Alias
 # ------------------
@@ -84,7 +81,6 @@ alias "psm=ps -U $USER"
 alias "psr=psu root"
 alias "psu=ps -U"
 alias "repo=cd ~/Github"
-alias "s=screen"
 alias "smic=sudo make install clean"
 alias "ssh=ssh -C -e none -v"
 alias "t=telnet"
