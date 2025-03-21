@@ -1,5 +1,17 @@
-#
-alias "update=(cd ~/git; make all)"
+# Common
+alias "cd..=cd .."
+alias "cd...=cd ../.."
+alias "t=telnet"
+alias "ls=eza"
+alias "la=eza -al"
+alias "ll=eza -l"
+alias "d=eza -l"
+
+
+# My self easy
+alias "myip=curl -s https://httpbin.org/ip | jq .origin"
+alias "repo=cd ~/Github"
+
 #
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"

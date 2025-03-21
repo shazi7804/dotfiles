@@ -1,0 +1,6 @@
+brew "eza"
+brew "jmeter"
+brew "pyenv"
+brew "zsh"
+cask "easydict"
+cask "orbstack"

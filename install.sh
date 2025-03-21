@@ -9,45 +9,18 @@ umask 077
 git submodule update --init
 
 #
-cp ${BASEDIR}/.inputrc ~/
-
-#
-cp ${BASEDIR}/.bashrc ~/
 cp ${BASEDIR}/.profile ~/
 cp ${BASEDIR}/.zshrc ~/
-if [ ! -e ~/.bashrc ]; then
-    cp ${BASEDIR}/.bashrc.local ~/
-fi
-if [ ! -e ~/.zshrc.local ]; then
-    cp ${BASEDIR}/.zshrc.local ~/
-fi
-
-#
-if [ ! -e ~/.screenrc ]; then
-    cp ${BASEDIR}/.screenrc ~/
-fi
-cp ${BASEDIR}/.tmux.conf ~/
-
-#
+cp ${BASEDIR}/.zshrc.local ~/
 cp ${BASEDIR}/.gitconfig ~/
-if [ ! -e ~/.gitconfig.local ]; then
-    cp ${BASEDIR}/.gitconfig.local ~/
-fi
-
-#
-cp ${BASEDIR}/.gdbinit ~/
-
-#
+cp ${BASEDIR}/.gitconfig.local ~/
 cp ${BASEDIR}/.wgetrc ~/
-
-#
 cp ${BASEDIR}/.sqliterc ~/
-
-#
 cp ${BASEDIR}/.psqlrc ~/
 
 # vim
 mkdir -p ~/.vim/
 rsync -a ${BASEDIR}/.vim/ ~/.vim/
 chmod 700 ~/.vim/
+cp ${BASEDIR}/.vimrc ~/
 vim +BundleClean\! +BundleInstall +q +q
