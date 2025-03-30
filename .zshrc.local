@@ -6,6 +6,7 @@ alias "ls=eza"
 alias "la=eza -al"
 alias "ll=eza -l"
 alias "d=eza -l"
+alias "myip=curl ifconfig.me"
 
 
 # My self easy
